@@ -13,7 +13,7 @@ git clone https://github.com/mykytayevd/TextTestAPI.git
 2. Set up a virtual environment:
 
 ```bash
-   python -m venv venv
+python -m venv venv
 ```
 ```bash
 source venv/bin/activate  # On Windows use `venv\Scripts\activate`
@@ -26,18 +26,19 @@ pip install -r requirements.txt
 
 4. Run the app. Start the FastAPI server using Uvicorn:
 ```bash
-uvicorn app.main:app --reload
+uvicorn main:app --reload
 ```
 
 ## Usage
 
-##### There are 3 endpoint to use: /tokenize, /pos_tag, /ner.
+##### There are 3 endpoints to use: /tokenize, /pos_tag, /ner.
+You can use Postman or Curl to perform requests.
 All of them expect POST request with JSON: ``
 {
 "text": "Any random text"
 }
 ``
-There is example of usage:
+There is example of usage via curl:
 ```bash
 curl -X POST http://127.0.0.1:8000/tokenize -H "Content-Type: application/json" -d '{"text": "Your text here"}'
 ```
